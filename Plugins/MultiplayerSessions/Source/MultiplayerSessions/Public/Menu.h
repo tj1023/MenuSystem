@@ -22,6 +22,10 @@ protected:
 	virtual bool Initialize() override;
 	virtual void NativeDestruct() override;
 
+	// MultiplayerSessionSubsystem에서의 델리게이트를 위한 콜백
+	UFUNCTION()
+	void OnCreateSession(bool bWasSuccessful);
+
 private:
 	UPROPERTY(meta = (BindWidget))
 	class UButton* HostButton;
